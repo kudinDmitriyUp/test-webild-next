@@ -1,7 +1,7 @@
 "use client";
 
 import { memo, useState, useCallback } from "react";
-import { Plus, Minus } from "lucide-react";
+import { Plus, Minus, Star } from "lucide-react";
 import CardStack from "@/components/cardStack/CardStack";
 import ProductImage from "@/components/shared/ProductImage";
 import QuantityButton from "@/components/shared/QuantityButton";
