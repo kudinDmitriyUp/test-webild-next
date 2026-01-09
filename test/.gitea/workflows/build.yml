@@ -1,0 +1,59 @@
+name: Build
+
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Branch to build'
+        required: true
+        default: 'main'
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ gitea.event.inputs.branch }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 24
+
+      - name: Install dependencies
+        run: |
+          set -euo pipefail
+          npm ci --prefer-offline --no-audit --silent 2>&1 | tee install.log
+        env:
+          NODE_OPTIONS: '--max-old-space-size=4096'
+
+      - name: Build (next build)
+        run: |
+          set -euo pipefail
+          npm run build 2>&1 | tee build.log
+        env:
+          NODE_ENV: production
+          NEXT_TELEMETRY_DISABLED: 1
+          NODE_OPTIONS: '--max-old-space-size=4096'
+        timeout-minutes: 5
+
+      - name: Upload logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-logs
+          path: |
+            install.log
+            build.log
+          if-no-files-found: ignore
+
+      - name: Build completed
+        if: success()
+        run: echo "Build completed successfully"
