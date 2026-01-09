@@ -6,7 +6,7 @@ import Button from "@/components/button/Button";
 import { cls, shouldUseInvertedText } from "@/lib/utils";
 import { getButtonProps } from "@/lib/buttonUtils";
 import { useTheme } from "@/providers/themeProvider/ThemeProvider";
-import type { LucideIcon } from "lucide-react";
+import { ShoppingCart, type LucideIcon } from "lucide-react";
 import type { ButtonConfig, CardAnimationType, TitleSegment } from "@/components/cardStack/types";
 import type { TextboxLayout, InvertedBackground } from "@/providers/themeProvider/config/constants";
 import type { CTAButtonVariant } from "@/components/button/types";
