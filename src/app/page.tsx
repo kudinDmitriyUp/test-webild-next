@@ -43,7 +43,7 @@ export default function LandingPage() {
       <div id="hero" data-section="hero">
         <HeroBillboardCarousel
           title="Modern Living in Prime Locations"
-          description="Carefully selected luxury properties with verified documentation. Maximize your investment returns with properties chosen by experts."
+          description="Discover premium real estate opportunities with verified documentation and expert guidance."
           tag="LIMITED LISTINGS"
           tagIcon={Sparkles}
           mediaItems={[

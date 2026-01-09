@@ -54,18 +54,24 @@ const HeroBillboardCarousel = ({
   mediaWrapperClassName = "",
 }: HeroBillboardCarouselProps) => {
   const renderCarouselItem = (item: MediaItem, index: number) => (
-    <div
-      key={index}
-      className="w-full aspect-[4/5] overflow-hidden rounded-theme-capped card p-2 shadow-lg"
-    >
-      <MediaContent
-        imageSrc={item.imageSrc}
-        videoSrc={item.videoSrc}
-        imageAlt={item.imageAlt || ""}
-        videoAriaLabel={item.videoAriaLabel || "Carousel media"}
-        imageClassName="z-1 h-full object-cover"
-      />
-    </div>
+      <div
+        key={index}
+        className="relative w-full aspect-[4/5] overflow-hidden rounded-theme-capped card p-2 shadow-lg"
+      >
+        <MediaContent
+          imageSrc={item.imageSrc}
+          videoSrc={item.videoSrc}
+          imageAlt={item.imageAlt || ""}
+          videoAriaLabel={item.videoAriaLabel || "Carousel media"}
+          imageClassName="z-1 h-full object-cover"
+        />
+        <button
+          onClick={() => window.open("https://www.linkedin.com", "_blank")}
+          className="absolute top-0 right-0 m-2 bg-blue-500 text-white px-4 py-2 rounded"
+        >
+          LinkedIn
+        </button>
+      </div>
   );
 
   return (
