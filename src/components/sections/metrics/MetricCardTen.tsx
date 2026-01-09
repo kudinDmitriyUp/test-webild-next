@@ -127,13 +127,16 @@ const MetricCardItem = memo(({
             </div>
 
             {metric.buttons && metric.buttons.length > 0 && (
-                <div className={cls("bg-accent/40 p-4 rounded-b-theme-capped", footerClassName)}>
-                    <div className="flex gap-4">
-                        {metric.buttons.slice(0, 2).map((button, index) => (
-                            <Button key={`${button.text}-${index}`} {...getButtonProps(button, index, defaultButtonVariant, cardButtonClassName, cardButtonTextClassName)} />
-                        ))}
+                    <div className={cls("bg-accent/40 p-4 rounded-b-theme-capped", footerClassName)}>
+                        <div className="flex gap-4 items-center justify-between">
+                            <div className="flex gap-4">
+                                {metric.buttons.slice(0, 2).map((button, index) => (
+                                    <Button key={`${button.text}-${index}`} {...getButtonProps(button, index, defaultButtonVariant, cardButtonClassName, cardButtonTextClassName)} />
+                                ))}
+                            </div>
+                            <ShoppingCart className="w-5 h-5" />
+                        </div>
                     </div>
-                </div>
             )}
         </div>
     );
