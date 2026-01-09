@@ -116,9 +116,16 @@ const ProductCardItem = memo(({
             />
 
             <div className="relative z-1 flex flex-col gap-3">
-                <h3 className={cls("text-xl font-medium leading-[1.15] truncate", shouldUseLightText ? "text-background" : "text-foreground", cardNameClassName)}>
-                    {product.name}
-                </h3>
+                <div className="flex flex-col items-start">
+                    <h3 className={cls("text-xl font-medium leading-[1.15] truncate mb-1", shouldUseLightText ? "text-background" : "text-foreground", cardNameClassName)}>
+                        {product.name}
+                    </h3>
+                    <div className="flex items-center">
+                        {[...Array(5)].map((_, index) => (
+                            <Star key={index} className={cls('w-4 h-4', index < Math.floor(4.5) ? 'fill-current' : 'opacity-20')} />
+                        ))}
+                    </div>
+                </div>
 
                 <div className="flex items-center justify-between gap-4">
                     <div className={cls("flex items-center gap-2", quantityControlsClassName)}>
