@@ -134,7 +134,11 @@ const MetricCardItem = memo(({
                                     <Button key={`${button.text}-${index}`} {...getButtonProps(button, index, defaultButtonVariant, cardButtonClassName, cardButtonTextClassName)} />
                                 ))}
                             </div>
-                            <ShoppingCart className="w-5 h-5" />
+                            <ShoppingCart className="w-5 h-5" onClick={() => {
+                                const cartProducts = JSON.parse(localStorage.getItem('cartProducts')) || {};
+                                cartProducts[metric.id] = metric;
+                                localStorage.setItem('cartProducts', JSON.stringify(cartProducts));
+                            }} />
                         </div>
                     </div>
             )}
