@@ -1,9 +1,12 @@
 "use client"
 
 import { ThemeProvider } from "@/providers/themeProvider/ThemeProvider";
+import { useState } from "react";
+import { useEffect } from "react";
 import NavbarStyleCentered from '@/components/navbar/NavbarStyleCentered/NavbarStyleCentered';
 import HeroBillboardCarousel from '@/components/sections/hero/HeroBillboardCarousel';
 import './globals.css';
+import './page.module.css';
 import ProductCardThree from '@/components/sections/product/ProductCardThree';
 import MediaSplitTabsAbout from '@/components/sections/about/MediaSplitTabsAbout';
 import MetricCardTen from '@/components/sections/metrics/MetricCardTen';
@@ -14,7 +17,10 @@ import FooterMedia from '@/components/sections/footer/FooterMedia';
 import { Sparkles } from "lucide-react";
 
 export default function LandingPage() {
+  const [countdown, setCountdown] = useState(60);
+const [isBlockVisible, setIsBlockVisible] = useState(true);
 
+  const [isCrossIconVisible, setIsCrossIconVisible] = useState(true);
   return (
     <ThemeProvider
       defaultButtonVariant="expand-hover"
