@@ -3,6 +3,7 @@
 import { ThemeProvider } from "@/providers/themeProvider/ThemeProvider";
 import NavbarStyleCentered from '@/components/navbar/NavbarStyleCentered/NavbarStyleCentered';
 import HeroBillboardCarousel from '@/components/sections/hero/HeroBillboardCarousel';
+import './globals.css';
 import ProductCardThree from '@/components/sections/product/ProductCardThree';
 import MediaSplitTabsAbout from '@/components/sections/about/MediaSplitTabsAbout';
 import MetricCardTen from '@/components/sections/metrics/MetricCardTen';
@@ -18,6 +19,12 @@ import { useEffect } from 'react';
 export default function LandingPage() {
 
   return (
+import CountdownBlock from '@/components/sections/countdown/CountdownBlock';
+      <CountdownBlock />
+        <div className='cross-icon' onClick={() => console.log('Cross icon clicked')}>
+const [isBlockVisible, setIsBlockVisible] = useState(true);
+          <span></span>
+        </div>
     <ThemeProvider
       defaultButtonVariant="expand-hover"
       defaultTextAnimation="reveal-blur"
