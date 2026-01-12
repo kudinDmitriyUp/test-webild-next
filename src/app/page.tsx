@@ -11,8 +11,10 @@ import FaqSplitMedia from '@/components/sections/faq/FaqSplitMedia';
 import ContactText from '@/components/sections/contact/ContactText';
 import FooterMedia from '@/components/sections/footer/FooterMedia';
 import { Sparkles } from "lucide-react";
+import { useState } from 'react';
 
 export default function LandingPage() {
+const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <ThemeProvider
       defaultButtonVariant="expand-hover"
@@ -239,6 +241,9 @@ export default function LandingPage() {
           ]}
         />
       </div>
+    <button style={{ position: 'fixed', bottom: '20px', right: '20px' }}>View Cart</button>
+    <button style={{ position: 'fixed', bottom: '20px', right: '20px' }}>View Cart</button>
+    <button style={{ position: 'fixed', bottom: '20px', right: '20px' }} onClick={() => setIsModalOpen(true)}>View Cart</button>
     </ThemeProvider>
   );
 }
