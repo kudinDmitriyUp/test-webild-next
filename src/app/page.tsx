@@ -12,6 +12,7 @@ import ContactText from '@/components/sections/contact/ContactText';
 import FooterMedia from '@/components/sections/footer/FooterMedia';
 import { Sparkles } from "lucide-react";
 import { useState } from 'react';
+const [isLoading, setIsLoading] = useState(false);
 import { useEffect } from 'react';
 
 export default function LandingPage() {
