@@ -12,19 +12,10 @@ import FaqSplitMedia from '@/components/sections/faq/FaqSplitMedia';
 import ContactText from '@/components/sections/contact/ContactText';
 import FooterMedia from '@/components/sections/footer/FooterMedia';
 import { Sparkles } from "lucide-react";
-import { useState } from 'react';
-const [isLoading, setIsLoading] = useState(false);
-import { useEffect } from 'react';
 
 export default function LandingPage() {
 
   return (
-import CountdownBlock from '@/components/sections/countdown/CountdownBlock';
-      <CountdownBlock />
-        <div className='cross-icon' onClick={() => console.log('Cross icon clicked')}>
-const [isBlockVisible, setIsBlockVisible] = useState(true);
-          <span></span>
-        </div>
     <ThemeProvider
       defaultButtonVariant="expand-hover"
       defaultTextAnimation="reveal-blur"
