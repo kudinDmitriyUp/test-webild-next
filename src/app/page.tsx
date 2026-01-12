@@ -1,7 +1,6 @@
 "use client"
 
 import { ThemeProvider } from "@/providers/themeProvider/ThemeProvider";
-import { useState } from "react";
 import NavbarStyleCentered from '@/components/navbar/NavbarStyleCentered/NavbarStyleCentered';
 import HeroBillboardCarousel from '@/components/sections/hero/HeroBillboardCarousel';
 import './globals.css';
@@ -15,8 +14,6 @@ import FooterMedia from '@/components/sections/footer/FooterMedia';
 import { Sparkles } from "lucide-react";
 
 export default function LandingPage() {
-  const [countdown, setCountdown] = useState(60);
-const [isBlockVisible, setIsBlockVisible] = useState(true);
 
   return (
     <ThemeProvider
