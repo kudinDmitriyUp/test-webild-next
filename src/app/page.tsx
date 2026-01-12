@@ -244,6 +244,7 @@ const [isModalOpen, setIsModalOpen] = useState(false);
     <button style={{ position: 'fixed', bottom: '20px', right: '20px' }}>View Cart</button>
     <button style={{ position: 'fixed', bottom: '20px', right: '20px' }}>View Cart</button>
     <button style={{ position: 'fixed', bottom: '20px', right: '20px' }} onClick={() => setIsModalOpen(true)}>View Cart</button>
+    <button style={{ position: 'fixed', bottom: '20px', right: '20px' }} onClick={() => setIsModalOpen(true)}>View Cart</button>
     </ThemeProvider>
   );
 }
