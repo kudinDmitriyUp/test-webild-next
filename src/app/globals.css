@@ -564,6 +564,27 @@ body {
 .cross-icon::after {
   transform: translate(-50%, -50%) rotate(-45deg);
 }
+.cross-icon {
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  position: relative;
+  cursor: pointer;
+}
+.cross-icon::before,
+.cross-icon::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.cross-icon::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
   background-color: var(--background);
   color: var(--foreground);
   font-family: var(--font-jetbrains-mono), sans-serif;

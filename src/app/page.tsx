@@ -34,6 +34,10 @@ const [isBlockVisible, setIsBlockVisible] = useState(true);
       secondaryButtonStyle="outline"
       headingFontWeight="bold"
     >
+        <div className="floating-block">
+          <div className="countdown">{countdown} seconds remaining</div>
+          <div className="cross-icon" onClick={() => setIsBlockVisible(false)}></div>
+        </div>
       <div id="nav" data-section="nav">
         <NavbarStyleCentered
           brandName="Premier Properties"
