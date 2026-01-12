@@ -3,11 +3,6 @@
 import { ThemeProvider } from "@/providers/themeProvider/ThemeProvider";
 import NavbarStyleCentered from '@/components/navbar/NavbarStyleCentered/NavbarStyleCentered';
 import HeroBillboardCarousel from '@/components/sections/hero/HeroBillboardCarousel';
-import Loader from '@/components/loader/Loader';
-import { useState } from "react";
-import { useState } from "react";
-import { useEffect } from 'react';
-import { useState } from "react";
 import ProductCardThree from '@/components/sections/product/ProductCardThree';
 import MediaSplitTabsAbout from '@/components/sections/about/MediaSplitTabsAbout';
 import MetricCardTen from '@/components/sections/metrics/MetricCardTen';
@@ -19,23 +14,8 @@ import { Sparkles } from "lucide-react";
 import { useState } from 'react';
 import { useEffect } from 'react';
 
-const [isLoaderVisible, setIsLoaderVisible] = useState(true);
 export default function LandingPage() {
-const [isLoaderVisible, setIsLoaderVisible] = useState(true);
-  const [isLoading, setIsLoading] = useState(true);
-  useEffect(() => {
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 5000);
-  }, []);
-  useEffect(() => {
-  setTimeout(() => {
-    setIsLoading(false);
-  }, 5000);
-}, []);
-  const [isLoading, setIsLoading] = useState(true);
-  const [isLoading, setIsLoading] = useState(true);
-const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <ThemeProvider
       defaultButtonVariant="expand-hover"
@@ -47,7 +27,6 @@ const [isModalOpen, setIsModalOpen] = useState(false);
       cardStyle="elevated-accent-light"
       primaryButtonStyle="gradient"
       secondaryButtonStyle="outline"
-      {isLoading && <Loader />}
       headingFontWeight="bold"
     >
       <div id="nav" data-section="nav">
@@ -263,10 +242,6 @@ const [isModalOpen, setIsModalOpen] = useState(false);
           ]}
         />
       </div>
-    <button style={{ position: 'fixed', bottom: '20px', right: '20px' }}>View Cart</button>
-    <button style={{ position: 'fixed', bottom: '20px', right: '20px' }}>View Cart</button>
-    <button style={{ position: 'fixed', bottom: '20px', right: '20px' }} onClick={() => setIsModalOpen(true)}>View Cart</button>
-    <button style={{ position: 'fixed', bottom: '20px', right: '20px' }} onClick={() => setIsModalOpen(true)}>View Cart</button>
     </ThemeProvider>
   );
 }
